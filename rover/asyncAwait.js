@@ -1,0 +1,60 @@
+function tempoAleatorio() {
+  return Math.floor(Math.random() * 4000) + 1000;
+}
+
+function analisarTerreno() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("1. Terreno analisado: ✅");
+      resolve("1. Terreno analisado: ✅");
+    }, tempoAleatorio());
+  });
+}
+
+function mover() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("2. Sonda movida: ✅");
+      resolve("2. Sonda movida: ✅");
+    }, tempoAleatorio());
+  });
+}
+
+function coletarAmostra() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("3. Amostra coletada: ✅");
+      resolve("3. Amostra coletada: ✅");
+    }, tempoAleatorio());
+  });
+}
+
+function carregarBateria() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("4. Bateria carregada: ✅");
+      resolve("4. Bateria carregada: ✅");
+    }, tempoAleatorio());
+  });
+}
+
+function transmitirDados() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("5. Dados transmitidos: ✅");
+      resolve("5. Dados transmitidos: ✅");
+    }, tempoAleatorio());
+  });
+}
+
+async function executar() {
+  await analisarTerreno();
+  await mover();
+  await coletarAmostra();
+  await carregarBateria();
+  await transmitirDados();
+}
+
+const botao = document.getElementById("botao").addEventListener("click", () => {
+  executar();
+});
